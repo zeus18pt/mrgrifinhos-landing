@@ -2930,3 +2930,19 @@ ul {
         text-align: center;
     }
 }
+
+/* Final mobile safeguard: force parceiros stack to a single full-width column */
+@media (max-width: 768px) {
+    .parceiros-grid {
+        grid-template-columns: 1fr !important;
+        gap: 16px;
+    }
+
+    .parceiro-card,
+    .parceiro-card.gtz-card,
+    .parceiro-card.brincar-card,
+    .parceiro-card.placeholder-card {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+}
