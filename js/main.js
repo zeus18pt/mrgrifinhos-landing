@@ -136,3 +136,12 @@ function initRevealAnimations() {
 
 // Initialize reveal animations
 initRevealAnimations();
+
+// Copy code function
+function copyCode(code) {
+    navigator.clipboard.writeText(code).then(() => {
+        alert('Código "' + code + '" copiado! 🎮');
+    }).catch(err => {
+        console.error('Erro ao copiar:', err);
+    });
+}
