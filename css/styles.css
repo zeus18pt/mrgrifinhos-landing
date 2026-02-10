@@ -159,27 +159,8 @@ ul {
 
 /* Hero Section */
 .hero {
-    padding-top: 80px;
-}
-
-.hero-banner {
-    background: var(--dark-lighter);
-    height: 200px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border-bottom: 1px solid rgba(0, 255, 136, 0.1);
-}
-
-.banner-placeholder {
-    font-size: 4rem;
-    margin-bottom: 8px;
-}
-
-.hero-banner p {
-    color: var(--gray);
-    font-size: 0.9rem;
+    padding-top: 120px;
+    padding-bottom: 60px;
 }
 
 .hero-profile {
@@ -196,7 +177,6 @@ ul {
     overflow: hidden;
     border: 3px solid var(--primary);
     flex-shrink: 0;
-    margin-top: -70px;
     box-shadow: 0 0 30px rgba(0, 255, 136, 0.3);
 }
 
