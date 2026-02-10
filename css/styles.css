@@ -1371,6 +1371,37 @@ ul {
 
 .parceiro-card.gtz-card {
     border-left: 4px solid #dc2626;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.parceiro-card.gtz-card .gtz-logo-large {
+    background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: 0 8px 24px rgba(220, 38, 38, 0.3);
+}
+
+.parceiro-card.gtz-card .gtz-logo-large img {
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+
+.parceiro-card.gtz-card h3 {
+    color: #fff;
+    margin-top: 8px;
+}
+
+.parceiro-card.gtz-card .btn-primary {
+    background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+    color: #fff;
+    margin-top: auto;
+}
+
+.parceiro-card.gtz-card .btn-primary:hover {
+    background: linear-gradient(135deg, #b91c1c 0%, #991b1b 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(220, 38, 38, 0.4);
 }
 
 /* StreamElements Widget Card */
