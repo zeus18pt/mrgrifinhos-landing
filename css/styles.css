@@ -1425,11 +1425,11 @@ ul {
     background: linear-gradient(180deg, var(--dark-light) 0%, var(--dark) 100%);
 }
 
-.contacto-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: start;
+.contacto-content {
+    display: flex;
+    justify-content: center;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 .contacto-info h3 {
@@ -1483,61 +1483,6 @@ ul {
     color: var(--gray);
 }
 
-/* Contact Form */
-.contacto-form-wrapper {
-    background: var(--dark-light);
-    border-radius: 20px;
-    padding: 32px;
-    border: 1px solid rgba(0, 255, 136, 0.1);
-}
-
-.contacto-form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.form-group label {
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: var(--gray-light);
-}
-
-.form-group input,
-.form-group textarea {
-    padding: 14px 16px;
-    background: var(--dark);
-    border: 1px solid rgba(0, 255, 136, 0.2);
-    border-radius: 10px;
-    color: var(--light);
-    font-family: var(--font-body);
-    font-size: 0.95rem;
-    transition: all 0.2s;
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: var(--primary);
-    box-shadow: 0 0 0 3px rgba(0, 255, 136, 0.1);
-}
-
-.form-group input::placeholder,
-.form-group textarea::placeholder {
-    color: var(--gray);
-}
-
-.form-group textarea {
-    resize: vertical;
-    min-height: 120px;
-}
-
 .btn-full {
     width: 100%;
     justify-content: center;
@@ -1572,14 +1517,11 @@ ul {
 
 /* Responsive Updates */
 @media (max-width: 1024px) {
-    .parceiros-grid,
-    .contacto-grid {
+    .parceiros-grid {
         grid-template-columns: 1fr;
         gap: 40px;
-    }
-    
-    .parceiros-grid {
         max-width: 500px;
+        margin: 0 auto;
     }
 }
 
@@ -1587,11 +1529,7 @@ ul {
     .parceiro-card {
         padding: 32px 24px;
     }
-    
-    .contacto-form-wrapper {
-        padding: 24px;
-    }
-    
+
     .contacto-item {
         flex-direction: column;
         text-align: center;
