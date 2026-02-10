@@ -1539,8 +1539,35 @@ ul {
     }
 }
 
-/* Small Phones (480px and below) */
+/* Small Phones (480px and below) - extended coverage for 376px-479px */
 @media (max-width: 480px) {
+    /* Ensure achievements don't overflow */
+    .achievements-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    
+    .achievement-card {
+        padding: 14px 12px;
+    }
+    
+    .achievement-content strong {
+        font-size: 0.88rem;
+    }
+    
+    .achievement-content span {
+        font-size: 0.82rem;
+    }
+    
+    /* Ensure parceiros cards are contained */
+    .parceiros-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+    
+    .parceiro-card {
+        padding: 18px 16px;
+    }
     .container {
         padding: 0 12px;
     }
@@ -1639,6 +1666,163 @@ ul {
     .creator-code-wrapper {
         flex-wrap: wrap;
         gap: 8px;
+    }
+}
+
+/* iPhone SE / Small Phones (375px and below) */
+@media (max-width: 375px) {
+    .container {
+        padding: 0 12px;
+    }
+    
+    /* Achievements Section - O Que Me Define - Fix overflow issues */
+    .achievements {
+        padding: 14px 10px;
+        margin-top: 16px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .achievements h3 {
+        font-size: 0.9rem;
+        margin-bottom: 12px;
+        text-align: center;
+    }
+    
+    .achievements-grid {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        width: 100%;
+    }
+    
+    .achievement-card {
+        padding: 12px 10px;
+        gap: 10px;
+        width: 100%;
+        box-sizing: border-box;
+        min-width: 0;
+    }
+    
+    .achievement-icon {
+        font-size: 1.3rem;
+        flex-shrink: 0;
+    }
+    
+    .achievement-content {
+        min-width: 0;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        word-break: break-word;
+    }
+    
+    .achievement-content strong {
+        font-size: 0.85rem;
+        line-height: 1.3;
+        margin-bottom: 4px;
+    }
+    
+    .achievement-content span {
+        font-size: 0.8rem;
+        line-height: 1.4;
+    }
+    
+    /* Parceiros Section - Partner cards sizing fixes */
+    .parceiros-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        width: 100%;
+        max-width: 100%;
+        padding: 0;
+    }
+    
+    .parceiro-card {
+        padding: 16px 14px;
+        width: 100%;
+        box-sizing: border-box;
+        border-radius: 14px;
+    }
+    
+    /* GTZ Card specific fixes */
+    .parceiro-card.gtz-card {
+        padding: 10px;
+    }
+    
+    .gtz-promo-img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+    
+    /* Brincar Card specific fixes */
+    .parceiro-card.brincar-card {
+        padding: 16px 14px;
+    }
+    
+    .parceiro-card.brincar-card .brincar-logo-img {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 10px;
+    }
+    
+    .parceiro-card.brincar-card h3 {
+        font-size: 0.95rem;
+        margin-bottom: 6px;
+    }
+    
+    .parceiro-card.brincar-card p {
+        font-size: 0.8rem;
+        line-height: 1.4;
+        margin-bottom: 12px;
+    }
+    
+    .btn-brincar {
+        padding: 10px 16px;
+        font-size: 0.8rem;
+    }
+    
+    /* Placeholder Card fixes */
+    .parceiro-card.placeholder-card {
+        padding: 16px 14px;
+    }
+    
+    .parceiro-card.placeholder-card .placeholder-icon {
+        width: 48px;
+        height: 48px;
+        margin-bottom: 10px;
+    }
+    
+    .parceiro-card.placeholder-card .placeholder-icon svg {
+        width: 24px;
+        height: 24px;
+    }
+    
+    .parceiro-card.placeholder-card h3 {
+        font-size: 0.95rem;
+        margin-bottom: 6px;
+    }
+    
+    .parceiro-card.placeholder-card p {
+        font-size: 0.8rem;
+        line-height: 1.4;
+        margin-bottom: 12px;
+    }
+    
+    .btn-placeholder {
+        padding: 10px 16px;
+        font-size: 0.8rem;
+    }
+    
+    /* Section header adjustments */
+    .section-header {
+        margin-bottom: 24px;
+    }
+    
+    .section-header h2 {
+        font-size: 1.1rem;
+    }
+    
+    .section-header p {
+        font-size: 0.85rem;
     }
 }
 
