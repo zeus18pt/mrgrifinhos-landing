@@ -1424,6 +1424,13 @@ ul {
     filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
 }
 
+.parceiro-card.brincar-card .brincar-logo-large .brincar-logo-img {
+    width: 120px;
+    height: auto;
+    border-radius: 12px;
+    display: block;
+}
+
 .parceiro-card.brincar-card h3 {
     color: #fff;
     margin-top: 8px;
