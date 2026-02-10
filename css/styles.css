@@ -1404,6 +1404,43 @@ ul {
     box-shadow: 0 4px 12px rgba(220, 38, 38, 0.4);
 }
 
+/* Brincar Automóveis Card */
+.parceiro-card.brincar-card {
+    border-left: 4px solid #FF6B35;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.parceiro-card.brincar-card .brincar-logo-large {
+    background: linear-gradient(135deg, #FF6B35 0%, #E85D24 100%);
+    border-radius: 16px;
+    padding: 16px;
+    box-shadow: 0 8px 24px rgba(255, 107, 53, 0.3);
+    margin-bottom: 8px;
+}
+
+.parceiro-card.brincar-card .brincar-logo-large svg {
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+
+.parceiro-card.brincar-card h3 {
+    color: #fff;
+    margin-top: 8px;
+}
+
+.parceiro-card.brincar-card .btn-primary {
+    background: linear-gradient(135deg, #FF6B35 0%, #E85D24 100%);
+    color: #fff;
+    margin-top: auto;
+}
+
+.parceiro-card.brincar-card .btn-primary:hover {
+    background: linear-gradient(135deg, #E85D24 0%, #D14E18 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 107, 53, 0.4);
+}
+
 /* StreamElements Widget Card */
 .parceiro-card.widget-card {
     padding: 0;
