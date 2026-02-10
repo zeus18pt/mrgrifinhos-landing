@@ -1,5 +1,5 @@
 /**
- * MrGrifinhos Landing Page
+ * MrGrifinhos Landing Page - Simplified Version
  * Main JavaScript
  */
 
@@ -7,14 +7,11 @@ document.addEventListener('DOMContentLoaded', function() {
     // Smooth scroll for navigation links
     initSmoothScroll();
     
-    // Animate stats numbers
-    initStatsAnimation();
-    
     // Navbar background on scroll
     initNavbarScroll();
     
-    // Mobile menu toggle (if needed in future)
-    // initMobileMenu();
+    // Contact form handling
+    initContactForm();
 });
 
 /**
@@ -23,71 +20,22 @@ document.addEventListener('DOMContentLoaded', function() {
 function initSmoothScroll() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href === '#') return;
+            
             e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
+            const target = document.querySelector(href);
             if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
+                const navbarHeight = document.querySelector('.navbar').offsetHeight;
+                const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navbarHeight - 20;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
                 });
             }
         });
     });
-}
-
-/**
- * Animate stats numbers when they come into view
- */
-function initStatsAnimation() {
-    const statNumbers = document.querySelectorAll('.stat-number[data-target]');
-    
-    const observerOptions = {
-        threshold: 0.5,
-        rootMargin: '0px'
-    };
-    
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                animateNumber(entry.target);
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-    
-    statNumbers.forEach(stat => observer.observe(stat));
-}
-
-/**
- * Animate a number counting up
- */
-function animateNumber(element) {
-    const target = parseInt(element.getAttribute('data-target'));
-    const duration = 2000; // 2 seconds
-    const step = target / (duration / 16); // 60fps
-    let current = 0;
-    
-    const timer = setInterval(() => {
-        current += step;
-        if (current >= target) {
-            current = target;
-            clearInterval(timer);
-        }
-        element.textContent = formatNumber(Math.floor(current));
-    }, 16);
-}
-
-/**
- * Format large numbers with K/M suffix
- */
-function formatNumber(num) {
-    if (num >= 1000000) {
-        return (num / 1000000).toFixed(1) + 'M';
-    }
-    if (num >= 1000) {
-        return (num / 1000).toFixed(1) + 'K';
-    }
-    return num.toString();
 }
 
 /**
@@ -98,50 +46,170 @@ function initNavbarScroll() {
     
     window.addEventListener('scroll', () => {
         if (window.scrollY > 100) {
-            navbar.style.background = 'rgba(15, 15, 15, 0.95)';
+            navbar.style.background = 'rgba(10, 22, 40, 0.98)';
+            navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.3)';
         } else {
-            navbar.style.background = 'rgba(15, 15, 15, 0.9)';
+            navbar.style.background = 'rgba(10, 22, 40, 0.95)';
+            navbar.style.boxShadow = 'none';
         }
     });
 }
 
 /**
- * Reveal animations on scroll
+ * Contact form handling
  */
-function initRevealAnimations() {
-    const revealElements = document.querySelectorAll('.feature-item, .platform-card, .stat-card');
+function initContactForm() {
+    const form = document.querySelector('.contacto-form');
+    if (!form) return;
     
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-    
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-    
-    revealElements.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(20px)';
-        el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-        observer.observe(el);
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData);
+        
+        // Show success message (replace with actual form submission logic)
+        const btn = form.querySelector('button[type="submit"]');
+        const originalText = btn.textContent;
+        
+        btn.textContent = 'Mensagem Enviada! ✓';
+        btn.style.background = 'var(--primary-dark)';
+        btn.disabled = true;
+        
+        // Log form data (for development)
+        console.log('Form submission:', data);
+        
+        // Reset form after 2 seconds
+        setTimeout(() => {
+            form.reset();
+            btn.textContent = originalText;
+            btn.style.background = '';
+            btn.disabled = false;
+        }, 3000);
+        
+        // TODO: Replace with actual form submission
+        // fetch('/api/contact', {
+        //     method: 'POST',
+        //     headers: { 'Content-Type': 'application/json' },
+        //     body: JSON.stringify(data)
+        // });
     });
 }
 
-// Initialize reveal animations
-initRevealAnimations();
+/**
+ * Copy creator code to clipboard
+ */
+function copyCreatorCode() {
+    const code = 'MRGRIFINHOS';
+    
+    if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(code).then(() => {
+            showCopyFeedback();
+        }).catch(err => {
+            console.error('Failed to copy:', err);
+            fallbackCopy(code);
+        });
+    } else {
+        fallbackCopy(code);
+    }
+}
 
-// Copy code function
-function copyCode(code) {
-    navigator.clipboard.writeText(code).then(() => {
-        alert('Código "' + code + '" copiado! 🎮');
-    }).catch(err => {
-        console.error('Erro ao copiar:', err);
-    });
+function fallbackCopy(text) {
+    const textArea = document.createElement('textarea');
+    textArea.value = text;
+    textArea.style.position = 'fixed';
+    textArea.style.left = '-999999px';
+    document.body.appendChild(textArea);
+    textArea.select();
+    
+    try {
+        document.execCommand('copy');
+        showCopyFeedback();
+    } catch (err) {
+        console.error('Fallback copy failed:', err);
+    }
+    
+    document.body.removeChild(textArea);
+}
+
+function showCopyFeedback() {
+    const btn = document.querySelector('.btn-copy-code');
+    if (!btn) return;
+    
+    const originalHTML = btn.innerHTML;
+    
+    // Change to checkmark
+    btn.innerHTML = `
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 6L9 17l-5-5"></path>
+        </svg>
+    `;
+    btn.style.background = 'var(--primary)';
+    btn.style.color = 'var(--dark)';
+    
+    // Revert after 2 seconds
+    setTimeout(() => {
+        btn.innerHTML = originalHTML;
+        btn.style.background = '';
+        btn.style.color = '';
+    }, 2000);
+}
+
+/**
+ * Copy GTZ shop discount code to clipboard
+ */
+function copyGTZCode() {
+    const code = 'MRGRIFINHOS';
+    
+    if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(code).then(() => {
+            showGTZCopyFeedback();
+        }).catch(err => {
+            console.error('Failed to copy:', err);
+            fallbackCopyGTZ(code);
+        });
+    } else {
+        fallbackCopyGTZ(code);
+    }
+}
+
+function fallbackCopyGTZ(text) {
+    const textArea = document.createElement('textarea');
+    textArea.value = text;
+    textArea.style.position = 'fixed';
+    textArea.style.left = '-999999px';
+    document.body.appendChild(textArea);
+    textArea.select();
+    
+    try {
+        document.execCommand('copy');
+        showGTZCopyFeedback();
+    } catch (err) {
+        console.error('Fallback copy failed:', err);
+    }
+    
+    document.body.removeChild(textArea);
+}
+
+function showGTZCopyFeedback() {
+    const btn = document.querySelector('.gtz-copy-btn');
+    if (!btn) return;
+    
+    const originalHTML = btn.innerHTML;
+    
+    // Change to checkmark
+    btn.innerHTML = `
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 6L9 17l-5-5"></path>
+        </svg>
+    `;
+    btn.style.background = '#ef4444';
+    btn.style.color = '#fff';
+    
+    // Revert after 2 seconds
+    setTimeout(() => {
+        btn.innerHTML = originalHTML;
+        btn.style.background = '';
+        btn.style.color = '';
+    }, 2000);
 }
