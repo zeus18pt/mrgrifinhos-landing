@@ -34,6 +34,11 @@
     box-sizing: border-box;
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -525,6 +530,12 @@ ul {
     grid-template-columns: 1.2fr 0.8fr;
     gap: 60px;
     align-items: center;
+}
+
+.sobre-grid > * {
+    min-width: 0;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
 }
 
 .sobre-texto h2 {
@@ -1107,7 +1118,23 @@ ul {
     }
     
     .container {
-        padding: 0 20px;
+        padding: 0 16px;
+    }
+    
+    /* Fix overflow issues */
+    .sobre-grid,
+    .parceiros-grid,
+    .contacto-grid {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .sobre-texto,
+    .sobre-imagem,
+    .schedule-card {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
     }
     
     /* Navigation - Mobile menu */
@@ -1175,10 +1202,16 @@ ul {
         padding-bottom: 40px;
     }
     
+    .hero .container {
+        padding: 0 12px;
+    }
+    
     .hero-card {
-        padding: 28px 20px;
+        padding: 24px 16px;
         border-radius: 16px;
-        gap: 24px;
+        gap: 20px;
+        width: 100%;
+        box-sizing: border-box;
     }
     
     .profile-photo-frame {
@@ -1235,20 +1268,22 @@ ul {
     /* Hero Stats */
     .hero-stats {
         grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
-        padding: 24px 0;
+        gap: 8px;
+        padding: 20px 0;
+        width: 100%;
     }
     
     .stat-box {
-        padding: 16px 10px;
+        padding: 14px 8px;
+        min-width: 0;
     }
     
     .stat-number {
-        font-size: 1.4rem;
+        font-size: 1.3rem;
     }
     
     .stat-label {
-        font-size: 0.75rem;
+        font-size: 0.7rem;
     }
     
     /* Section Headers */
@@ -1309,7 +1344,9 @@ ul {
     
     /* Schedule Card */
     .schedule-card {
-        padding: 20px;
+        padding: 20px 16px;
+        width: 100%;
+        box-sizing: border-box;
     }
     
     .schedule-header {
@@ -1330,26 +1367,32 @@ ul {
     }
     
     .schedule-item {
-        padding: 12px;
+        padding: 12px 10px;
         flex-wrap: wrap;
-        gap: 8px;
+        gap: 6px;
+        width: 100%;
+        box-sizing: border-box;
     }
     
     .day-badge {
         font-size: 0.65rem;
-        padding: 5px 8px;
-        min-width: 44px;
+        padding: 5px 6px;
+        min-width: 38px;
+        flex-shrink: 0;
     }
     
     .time {
-        font-size: 0.85rem;
-        min-width: 90px;
+        font-size: 0.8rem;
+        min-width: auto;
+        flex-shrink: 0;
     }
     
     .stream-type {
         font-size: 0.75rem;
-        width: 100%;
-        padding-left: 52px;
+        width: auto;
+        flex: 1;
+        text-align: right;
+        padding-left: 0;
     }
     
     .schedule-cta {
@@ -1360,13 +1403,22 @@ ul {
     /* Parceiros Section */
     .parceiros-grid {
         grid-template-columns: 1fr;
-        gap: 20px;
-        max-width: 400px;
+        gap: 16px;
+        width: 100%;
+        max-width: 100%;
         margin: 0 auto;
     }
     
     .parceiro-card {
-        padding: 24px 20px;
+        padding: 20px 16px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .gtz-promo-img {
+        width: 100%;
+        height: auto;
+        max-width: 100%;
     }
     
     .parceiro-card.brincar-card .brincar-logo-img {
@@ -1404,11 +1456,14 @@ ul {
     .contacto-grid {
         grid-template-columns: 1fr;
         gap: 16px;
+        width: 100%;
         max-width: 100%;
     }
     
     .contacto-card {
-        padding: 24px 20px;
+        padding: 24px 16px;
+        width: 100%;
+        box-sizing: border-box;
     }
     
     .contacto-card-icon {
@@ -1487,7 +1542,7 @@ ul {
 /* Small Phones (480px and below) */
 @media (max-width: 480px) {
     .container {
-        padding: 0 16px;
+        padding: 0 12px;
     }
     
     :root {
@@ -1496,109 +1551,37 @@ ul {
     
     /* Hero further refinements */
     .hero-card {
-        padding: 24px 16px;
+        padding: 20px 14px;
         border-radius: 12px;
     }
     
-    .profile-photo-frame {
-        width: 110px;
-        height: 110px;
-    }
-    
-    .hero-name {
-        font-size: 1.5rem;
-    }
-    
-    .hero-subtitle {
-        font-size: 0.85rem;
-    }
-    
-    .hero-description {
-        font-size: 0.85rem;
-    }
-    
-    /* Stats - better spacing */
-    .hero-stats {
-        gap: 8px;
-    }
-    
-    .stat-box {
-        padding: 14px 8px;
-    }
-    
-    .stat-number {
-        font-size: 1.2rem;
-    }
-    
-    .stat-label {
-        font-size: 0.7rem;
-    }
-    
-    /* Section headers */
-    .section-header h2 {
-        font-size: 1.25rem;
-    }
-    
-    /* Schedule adjustments */
-    .schedule-card {
-        padding: 16px;
-    }
-    
-    .schedule-item {
-        padding: 10px;
-    }
-    
-    .day-badge {
-        font-size: 0.6rem;
-        padding: 4px 6px;
-        min-width: 40px;
-    }
-    
-    .time {
-        font-size: 0.8rem;
-        min-width: 80px;
-    }
-    
-    .stream-type {
-        font-size: 0.7rem;
-        padding-left: 46px;
-    }
-    
-    /* Contact cards */
-    .contacto-card {
-        padding: 20px 16px;
-    }
-    
-    .creator-code,
-    .gtz-shop-code {
-        font-size: 1rem;
-        letter-spacing: 0.5px;
-    }
-}
-
-/* Extra Small Phones (360px and below) */
-@media (max-width: 360px) {
-    .container {
-        padding: 0 12px;
-    }
-    
-    /* Hero minimal */
     .profile-photo-frame {
         width: 100px;
         height: 100px;
     }
     
     .hero-name {
-        font-size: 1.3rem;
+        font-size: 1.4rem;
+        letter-spacing: 1px;
     }
     
     .hero-subtitle {
         font-size: 0.8rem;
     }
     
-    /* Stats single column for very small screens */
+    .hero-description {
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+    
+    .btn-twitch,
+    .btn-hero-outline {
+        padding: 10px 16px;
+        font-size: 0.85rem;
+    }
+    
+    /* Stats - better spacing */
     .hero-stats {
-        grid-template-columns: repeat(2, 1fr);
         gap: 6px;
     }
     
@@ -1614,6 +1597,98 @@ ul {
         font-size: 0.65rem;
     }
     
+    /* Section headers */
+    .section-header h2 {
+        font-size: 1.25rem;
+    }
+    
+    /* Schedule adjustments */
+    .schedule-card {
+        padding: 16px 12px;
+    }
+    
+    .schedule-item {
+        padding: 10px 8px;
+    }
+    
+    .day-badge {
+        font-size: 0.6rem;
+        padding: 4px 6px;
+        min-width: 38px;
+    }
+    
+    .time {
+        font-size: 0.75rem;
+    }
+    
+    .stream-type {
+        font-size: 0.7rem;
+    }
+    
+    /* Contact cards */
+    .contacto-card {
+        padding: 20px 14px;
+    }
+    
+    .creator-code,
+    .gtz-shop-code {
+        font-size: 0.95rem;
+        letter-spacing: 0.5px;
+    }
+    
+    .creator-code-wrapper {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+}
+
+/* Extra Small Phones (360px and below) */
+@media (max-width: 360px) {
+    .container {
+        padding: 0 10px;
+    }
+    
+    /* Hero minimal */
+    .hero-card {
+        padding: 18px 12px;
+    }
+    
+    .profile-photo-frame {
+        width: 90px;
+        height: 90px;
+    }
+    
+    .hero-name {
+        font-size: 1.2rem;
+        letter-spacing: 0.5px;
+    }
+    
+    .hero-subtitle {
+        font-size: 0.75rem;
+    }
+    
+    .hero-description {
+        font-size: 0.8rem;
+    }
+    
+    /* Stats single column for very small screens */
+    .hero-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 5px;
+    }
+    
+    .stat-box {
+        padding: 10px 4px;
+    }
+    
+    .stat-number {
+        font-size: 1rem;
+    }
+    
+    .stat-label {
+        font-size: 0.6rem;
+    }
+    
     /* Schedule minimal */
     .schedule-header h3 {
         font-size: 1rem;
@@ -1621,17 +1696,21 @@ ul {
     
     .day-badge {
         font-size: 0.55rem;
-        min-width: 36px;
+        min-width: 34px;
+        padding: 4px 5px;
     }
     
     .time {
-        font-size: 0.75rem;
-        min-width: 70px;
+        font-size: 0.7rem;
+    }
+    
+    .stream-type {
+        font-size: 0.65rem;
     }
     
     /* Partner cards minimal */
     .parceiro-card {
-        padding: 20px 16px;
+        padding: 18px 14px;
     }
     
     .parceiro-card.brincar-card .brincar-logo-img {
@@ -1640,6 +1719,10 @@ ul {
     }
     
     /* Contact minimal */
+    .contacto-card {
+        padding: 18px 12px;
+    }
+    
     .contacto-card-icon {
         width: 48px;
         height: 48px;
@@ -1652,12 +1735,16 @@ ul {
     
     .creator-code,
     .gtz-shop-code {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
         padding: 5px 10px;
     }
     
     .card-value {
-        font-size: 0.9rem;
+        font-size: 0.85rem;
+    }
+    
+    .card-description {
+        font-size: 0.75rem;
     }
 }
 
