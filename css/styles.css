@@ -378,6 +378,36 @@ ul {
     transform: translateY(-3px);
 }
 
+/* Twitch Button */
+.btn-twitch {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 28px;
+    background: linear-gradient(135deg, #9146FF 0%, #7c3aed 100%);
+    color: #fff;
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    font-weight: 700;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(145, 70, 255, 0.3);
+}
+
+.btn-twitch:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(145, 70, 255, 0.4);
+}
+
+.btn-twitch svg {
+    transition: transform 0.3s ease;
+}
+
+.btn-twitch:hover svg {
+    transform: scale(1.1);
+}
+
 /* Hero Stats */
 .hero-stats {
     display: grid;
