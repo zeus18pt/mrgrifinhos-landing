@@ -1373,6 +1373,32 @@ ul {
     border-left: 4px solid #dc2626;
 }
 
+/* StreamElements Widget Card */
+.parceiro-card.widget-card {
+    padding: 0;
+    overflow: hidden;
+    border: 1px solid rgba(0, 255, 136, 0.2);
+    background: var(--dark-light);
+}
+
+.widget-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 75%; /* 4:3 Aspect Ratio - adjusts automatically */
+    overflow: hidden;
+}
+
+.widget-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+
 .parceiro-logo-large {
     width: 80px;
     height: 80px;
