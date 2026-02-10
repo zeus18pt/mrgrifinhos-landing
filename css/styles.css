@@ -2813,3 +2813,82 @@ ul {
         gap: 12px;
     }
 }
+
+/* Mobile fix v3: prevent overflow in "O que me define" and normalize partner card sizing */
+@media (max-width: 768px) {
+    .achievements-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .achievement-card {
+        width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+    }
+
+    .achievement-content {
+        min-width: 0;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+    }
+
+    .parceiros-grid {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+    }
+
+    .parceiro-card {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .gtz-promo-img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 375px) {
+    .achievements {
+        padding: 14px 10px;
+    }
+
+    .achievement-card {
+        padding: 12px 10px;
+        gap: 10px;
+    }
+
+    .achievement-content strong {
+        font-size: 0.85rem;
+        line-height: 1.3;
+    }
+
+    .achievement-content span {
+        font-size: 0.8rem;
+        line-height: 1.4;
+    }
+
+    .parceiros-grid {
+        gap: 12px;
+    }
+
+    .parceiro-card,
+    .parceiro-card.brincar-card,
+    .parceiro-card.placeholder-card {
+        padding: 16px 14px;
+        border-radius: 14px;
+    }
+
+    .parceiro-card.gtz-card {
+        padding: 10px;
+    }
+
+    .parceiro-card.brincar-card .brincar-logo-img {
+        width: 50px;
+        height: 50px;
+    }
+}
