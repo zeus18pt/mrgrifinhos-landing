@@ -19,7 +19,7 @@
     <nav class="navbar">
         <div class="container">
             <a href="#" class="logo">
-                <span class="logo-icon">M</span>
+                <img src="assets/images/logo.png" alt="MrGrifinhos Logo" class="logo-img">
                 <span class="logo-text">MRGRIFINHOS</span>
             </a>
             <ul class="nav-links">
@@ -34,14 +34,14 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-banner">
-            <span class="banner-placeholder">🎮</span>
-            <p>[Banner - 1500x500px]</p>
-        </div>
         <div class="container">
             <div class="hero-profile">
                 <div class="profile-avatar">
                     <img src="assets/images/guilherme.jpg" alt="MrGrifinhos - Guilherme" class="avatar-img">
+                    <a href="https://gtz.pt/" target="_blank" class="gtz-avatar-badge">
+                        <img src="assets/images/gtz-logo.png" alt="GTZ" class="badge-logo-small">
+                        <span>GTZ ESPORTS</span>
+                    </a>
                 </div>
                 <div class="profile-info">
                     <span class="live-badge">● LIVE AGORA</span>
@@ -134,6 +134,52 @@
                 <div class="galeria-item">
                     <span class="galeria-icon">👥</span>
                     <span class="galeria-label">Comunidade</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Apoia Section -->
+    <section id="apoia" class="apoia">
+        <div class="container">
+            <div class="section-header">
+                <h2>APOIA O MRGRIFINHOS</h2>
+                <p>Usa estes códigos para apoiar diretamente o crescimento do canal.</p>
+            </div>
+            <div class="apoia-grid">
+                <div class="code-card epic">
+                    <div class="code-header">
+                        <span class="code-icon">🎮</span>
+                        <h3>Código Criador Epic</h3>
+                        <span class="code-platform">Fortnite / Epic Games</span>
+                    </div>
+                    <div class="code-display">
+                        <span class="code-text">MrGrifinhos</span>
+                        <button class="btn-copy" onclick="copyCode('MrGrifinhos')">📋 Copiar</button>
+                    </div>
+                    <p class="code-desc">Usa este código na loja de itens do Fortnite. A Epic partilha parte das receitas connosco!</p>
+                </div>
+                <div class="code-card gtz">
+                    <div class="code-header">
+                        <img src="assets/images/gtz-logo.png" alt="GTZ" class="code-logo">
+                        <h3>Código Desconto GTZ</h3>
+                        <span class="code-platform">Loja GTZ Esports</span>
+                    </div>
+                    <div class="code-display">
+                        <span class="code-text">MrGrifinhos</span>
+                        <button class="btn-copy" onclick="copyCode('MrGrifinhos')">📋 Copiar</button>
+                    </div>
+                    <p class="code-desc">Desconto exclusivo em periféricos gaming, cadeiras e merch oficial GTZ.</p>
+                </div>
+            </div>
+            <div class="gtz-info">
+                <div class="gtz-logo">
+                    <span class="gtz-icon">🏆</span>
+                </div>
+                <div class="gtz-text">
+                    <h3>Orgulhosamente da equipa <strong>GTZ Esports</strong></h3>
+                    <p>Um dos maiores organizações de esports em Portugal, dedicada ao crescimento de talentos nacionais.</p>
+                    <a href="https://shop.gtz.pt/" target="_blank" class="btn btn-primary">Ir para a Loja →</a>
                 </div>
             </div>
         </div>
@@ -279,7 +325,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <span class="logo-icon">M</span>
+                    <img src="assets/images/logo.png" alt="MrGrifinhos Logo" class="logo-img-small">
                     <span class="logo-text">MRGRIFINHOS</span>
                 </div>
                 <p class="footer-copy">© 2026 MrGrifinhos. Todos os direitos reservados.</p>
