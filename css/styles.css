@@ -1406,26 +1406,22 @@ ul {
 
 /* Brincar Automóveis Card */
 .parceiro-card.brincar-card {
-    border-left: 4px solid #27AE60;
+    border-left: 4px solid #2ECC71;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .parceiro-card.brincar-card .brincar-logo-large {
-    background: linear-gradient(135deg, #27AE60 0%, #8E44AD 100%);
+    background: linear-gradient(135deg, #2ECC71 0%, #1E8449 100%);
     border-radius: 16px;
     padding: 16px;
-    box-shadow: 0 8px 24px rgba(39, 174, 96, 0.3);
+    box-shadow: 0 8px 24px rgba(46, 204, 113, 0.3);
     margin-bottom: 8px;
 }
 
 .parceiro-card.brincar-card .brincar-logo-large svg {
     filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
-}
-
-.parceiro-card.brincar-card .brincar-logo-large svg rect {
-    fill: #27AE60;
 }
 
 .parceiro-card.brincar-card h3 {
@@ -1434,15 +1430,15 @@ ul {
 }
 
 .parceiro-card.brincar-card .btn-primary {
-    background: linear-gradient(135deg, #27AE60 0%, #2ECC71 100%);
+    background: linear-gradient(135deg, #2ECC71 0%, #27AE60 100%);
     color: #fff;
     margin-top: auto;
 }
 
 .parceiro-card.brincar-card .btn-primary:hover {
-    background: linear-gradient(135deg, #229954 0%, #27AE60 100%);
+    background: linear-gradient(135deg, #27AE60 0%, #229954 100%);
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(39, 174, 96, 0.4);
+    box-shadow: 0 4px 12px rgba(46, 204, 113, 0.4);
 }
 
 /* Featured Partner Badge - Kept for potential future use */
