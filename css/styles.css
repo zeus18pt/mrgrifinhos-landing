@@ -188,27 +188,24 @@ ul {
 }
 
 .gtz-avatar-badge {
-    position: absolute;
-    bottom: -12px;
-    left: 50%;
-    transform: translateX(-50%);
     display: inline-flex;
     align-items: center;
-    gap: 4px;
+    gap: 6px;
     background: #dc2626;
-    padding: 4px 10px;
-    border-radius: 12px;
-    font-size: 0.65rem;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.75rem;
     font-weight: 700;
     color: #fff;
     white-space: nowrap;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
     transition: 0.2s;
+    margin-top: 16px;
 }
 
 .gtz-avatar-badge:hover {
     background: #b91c1c;
-    transform: translateX(-50%) scale(1.05);
+    transform: scale(1.05);
 }
 
 .badge-logo-small {
