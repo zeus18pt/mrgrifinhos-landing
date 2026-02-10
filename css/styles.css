@@ -536,24 +536,6 @@ ul {
     display: block;
 }
 
-.quote-card {
-    background: var(--dark);
-    border-radius: 12px;
-    padding: 20px 24px;
-    border-left: 3px solid var(--primary);
-}
-
-.quote-icon {
-    font-size: 2rem;
-    color: var(--primary);
-    line-height: 1;
-}
-
-.quote-card p {
-    font-style: italic;
-    color: var(--gray-light);
-}
-
 /* Galeria Section */
 .galeria {
     padding: 60px 0;
