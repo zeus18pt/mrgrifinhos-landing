@@ -1131,36 +1131,232 @@ ul {
         gap: 16px;
         text-align: center;
     }
+    
+    /* Achievements & Schedule Mobile */
+    .achievements-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .schedule-card {
+        padding: 20px;
+    }
+    
+    .schedule-item {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+    
+    .schedule-item .day-badge {
+        order: 1;
+    }
+    
+    .schedule-item .time {
+        order: 2;
+        min-width: auto;
+    }
+    
+    .schedule-item .stream-type {
+        order: 3;
+        width: 100%;
+        padding-left: 62px;
+    }
 }
 
 /* ============================================================
    NEW/REFINED SECTIONS - MrGrifinhos Simplified Landing Page
    ============================================================ */
 
-/* Achievements Section in Sobre */
+/* Achievements Section in Sobre - Redesigned */
 .achievements {
     margin-top: 32px;
     padding: 24px;
     background: rgba(0, 255, 136, 0.05);
-    border-radius: 12px;
+    border-radius: 16px;
     border: 1px solid rgba(0, 255, 136, 0.1);
 }
 
 .achievements h3 {
     font-family: var(--font-display);
     font-size: 1.1rem;
-    margin-bottom: 16px;
+    margin-bottom: 20px;
     color: var(--primary);
 }
 
-.achievements-list {
-    list-style: none;
+.achievements-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
 }
 
-.achievements-list li {
-    color: var(--gray-light);
-    margin-bottom: 10px;
+.achievement-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px;
+    background: rgba(10, 22, 40, 0.5);
+    border-radius: 12px;
+    border: 1px solid rgba(0, 255, 136, 0.08);
+    transition: all 0.2s ease;
+}
+
+.achievement-card:hover {
+    border-color: rgba(0, 255, 136, 0.2);
+    transform: translateY(-2px);
+}
+
+.achievement-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.achievement-content {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.achievement-content strong {
+    font-size: 0.9rem;
+    color: var(--light);
+}
+
+.achievement-content span {
+    font-size: 0.8rem;
+    color: var(--gray);
+    line-height: 1.4;
+}
+
+/* Schedule Card */
+.schedule-card {
+    background: linear-gradient(135deg, rgba(15, 29, 51, 0.9) 0%, rgba(10, 22, 40, 0.95) 100%);
+    border-radius: 20px;
+    padding: 28px;
+    border: 1px solid rgba(0, 255, 136, 0.15);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.schedule-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 24px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(0, 255, 136, 0.1);
+}
+
+.schedule-icon {
+    font-size: 2.5rem;
+    margin-bottom: 8px;
+}
+
+.schedule-header h3 {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    color: var(--light);
+    margin-bottom: 4px;
+}
+
+.timezone {
+    font-size: 0.8rem;
+    color: var(--gray);
+    background: rgba(0, 255, 136, 0.1);
+    padding: 4px 12px;
+    border-radius: 20px;
+}
+
+.schedule-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.schedule-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+    background: rgba(0, 255, 136, 0.03);
+    border-radius: 12px;
+    border: 1px solid rgba(0, 255, 136, 0.08);
+    transition: all 0.2s ease;
+}
+
+.schedule-item:hover {
+    background: rgba(0, 255, 136, 0.06);
+    border-color: rgba(0, 255, 136, 0.15);
+}
+
+.schedule-item.highlight {
+    background: linear-gradient(135deg, rgba(145, 70, 255, 0.1) 0%, rgba(145, 70, 255, 0.05) 100%);
+    border-color: rgba(145, 70, 255, 0.2);
+}
+
+.schedule-item.highlight .day-badge {
+    background: linear-gradient(135deg, #9146FF 0%, #7c3aed 100%);
+    color: #fff;
+}
+
+.schedule-item.weekend {
+    background: rgba(255, 255, 255, 0.03);
+    border-style: dashed;
+}
+
+.day-badge {
+    font-family: var(--font-display);
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--primary);
+    background: rgba(0, 255, 136, 0.15);
+    padding: 6px 10px;
+    border-radius: 8px;
+    min-width: 50px;
+    text-align: center;
+}
+
+.time {
+    font-family: var(--font-display);
     font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--light);
+    min-width: 110px;
+}
+
+.stream-type {
+    font-size: 0.8rem;
+    color: var(--gray);
+    flex: 1;
+}
+
+.schedule-cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #9146FF 0%, #7c3aed 100%);
+    color: #fff;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.schedule-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(145, 70, 255, 0.3);
+}
+
+.schedule-cta svg {
+    transition: transform 0.3s ease;
+}
+
+.schedule-cta:hover svg {
+    transform: scale(1.1);
 }
 
 /* Parceiros Section */
