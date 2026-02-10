@@ -447,7 +447,7 @@ ul {
 }
 
 .code-card.gtz {
-    border-left: 4px solid var(--primary);
+    border-left: 4px solid #dc2626;
 }
 
 .code-header {
@@ -564,23 +564,32 @@ ul {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    background: rgba(0, 255, 136, 0.1);
-    border: 1px solid var(--primary);
+    background: rgba(220, 38, 38, 0.1);
+    border: 1px solid #dc2626;
     padding: 4px 12px;
     border-radius: 20px;
     font-size: 0.75rem;
     font-weight: 700;
-    color: var(--primary);
+    color: #dc2626;
     transition: 0.2s;
 }
 
 .gtz-badge:hover {
-    background: var(--primary);
-    color: var(--dark);
+    background: #dc2626;
+    color: #fff;
 }
 
-.badge-icon {
-    font-size: 0.9rem;
+.badge-logo {
+    width: 16px;
+    height: 16px;
+    border-radius: 2px;
+}
+
+.code-logo {
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+    margin-bottom: 8px;
 }
 
 /* Conteúdo Section */
