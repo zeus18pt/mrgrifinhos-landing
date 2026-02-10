@@ -12,6 +12,9 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Contact form handling
     initContactForm();
+    
+    // Mobile menu toggle
+    initMobileMenu();
 });
 
 /**
@@ -35,6 +38,40 @@ function initSmoothScroll() {
                 });
             }
         });
+    });
+}
+
+/**
+ * Mobile menu toggle functionality
+ */
+function initMobileMenu() {
+    const menuToggle = document.getElementById('mobile-menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+    
+    if (!menuToggle || !navLinks) return;
+    
+    menuToggle.addEventListener('click', function() {
+        menuToggle.classList.toggle('active');
+        navLinks.classList.toggle('active');
+        document.body.classList.toggle('menu-open');
+    });
+    
+    // Close menu when clicking on a link
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', function() {
+            menuToggle.classList.remove('active');
+            navLinks.classList.remove('active');
+            document.body.classList.remove('menu-open');
+        });
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!menuToggle.contains(e.target) && !navLinks.contains(e.target)) {
+            menuToggle.classList.remove('active');
+            navLinks.classList.remove('active');
+            document.body.classList.remove('menu-open');
+        }
     });
 }
 

@@ -38,6 +38,12 @@ html {
     scroll-behavior: smooth;
 }
 
+/* Prevent horizontal scroll on mobile */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 body {
     font-family: var(--font-body);
     background-color: var(--dark);
@@ -119,6 +125,47 @@ ul {
 
 .nav-links a:hover {
     color: var(--primary);
+}
+
+/* Mobile Menu Toggle */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 28px;
+    height: 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+}
+
+.mobile-menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: var(--primary);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.mobile-menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(6px, 6px);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
 }
 
 /* Buttons */
@@ -989,7 +1036,11 @@ ul {
     color: var(--gray);
 }
 
-/* Responsive */
+/* ============================================================
+   MOBILE RESPONSIVENESS - COMPREHENSIVE BREAKPOINTS
+   ============================================================ */
+
+/* Large Tablets & Small Desktops (1024px and below) */
 @media (max-width: 1024px) {
     .sobre-grid,
     .comunidade-grid {
@@ -1039,45 +1090,129 @@ ul {
     .hero-buttons {
         justify-content: center;
     }
+    
+    /* Contact grid */
+    .contacto-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        max-width: 450px;
+        margin: 0 auto;
+    }
 }
 
+/* Tablets & Large Phones (768px and below) */
 @media (max-width: 768px) {
-    .nav-links {
-        display: none;
+    :root {
+        --section-padding: 60px;
     }
     
-    /* Hero Card Mobile */
+    .container {
+        padding: 0 20px;
+    }
+    
+    /* Navigation - Mobile menu */
+    .mobile-menu-toggle {
+        display: flex;
+    }
+    
+    .nav-links {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: rgba(10, 22, 40, 0.98);
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        padding: 20px;
+        gap: 0;
+        border-bottom: 1px solid rgba(0, 255, 136, 0.1);
+        transform: translateY(-150%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        z-index: 999;
+    }
+    
+    .nav-links.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .nav-links li {
+        width: 100%;
+    }
+    
+    .nav-links a {
+        display: block;
+        padding: 16px 20px;
+        font-size: 1rem;
+        border-bottom: 1px solid rgba(0, 255, 136, 0.05);
+        text-align: center;
+    }
+    
+    .nav-links li:last-child a {
+        border-bottom: none;
+    }
+    
+    .navbar .btn-primary {
+        padding: 8px 14px;
+        font-size: 0.8rem;
+    }
+    
+    .logo-text {
+        font-size: 0.95rem;
+    }
+    
+    .logo-img {
+        width: 32px;
+        height: 32px;
+    }
+    
+    /* Hero Section */
+    .hero {
+        padding-top: 100px;
+        padding-bottom: 40px;
+    }
+    
     .hero-card {
-        padding: 32px 24px;
-        border-radius: 20px;
+        padding: 28px 20px;
+        border-radius: 16px;
+        gap: 24px;
     }
     
     .profile-photo-frame {
-        width: 140px;
-        height: 140px;
+        width: 130px;
+        height: 130px;
+        padding: 4px;
     }
     
     .hero-name {
-        font-size: 2rem;
+        font-size: 1.75rem;
+        letter-spacing: 1px;
     }
     
     .hero-subtitle {
-        font-size: 1rem;
+        font-size: 0.95rem;
     }
     
     .hero-description {
-        font-size: 0.95rem;
+        font-size: 0.9rem;
+        line-height: 1.6;
+        margin-bottom: 20px;
     }
     
     .hero-buttons {
         flex-direction: column;
-        gap: 12px;
+        gap: 10px;
     }
     
-    .btn-hero-primary,
+    .btn-twitch,
     .btn-hero-outline {
         width: 100%;
         justify-content: center;
+        padding: 12px 20px;
+        font-size: 0.9rem;
     }
     
     .hero-badges {
@@ -1085,65 +1220,464 @@ ul {
         gap: 8px;
     }
     
-    /* .live-badge, */
     .gtz-badge-red {
         width: fit-content;
         margin: 0 auto;
+        padding: 5px 12px;
+        font-size: 0.75rem;
     }
     
+    .badge-logo-small {
+        width: 14px;
+        height: 14px;
+    }
+    
+    /* Hero Stats */
     .hero-stats {
         grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        padding: 24px 0;
     }
     
-    .apoia-grid {
-        grid-template-columns: 1fr;
+    .stat-box {
+        padding: 16px 10px;
     }
     
-    .sobre-pilares {
-        flex-direction: column;
+    .stat-number {
+        font-size: 1.4rem;
     }
     
-    .comunidade-stats {
-        flex-direction: column;
+    .stat-label {
+        font-size: 0.75rem;
     }
     
-    .newsletter-form {
-        flex-direction: column;
+    /* Section Headers */
+    .section-header {
+        margin-bottom: 32px;
     }
     
-    .footer-content {
-        flex-direction: column;
-        gap: 16px;
-        text-align: center;
+    .section-header h2 {
+        font-size: 1.4rem;
     }
     
-    /* Achievements & Schedule Mobile */
+    .section-tag {
+        font-size: 0.7rem;
+        padding: 5px 12px;
+    }
+    
+    /* Sobre Section */
+    .sobre-texto h2 {
+        font-size: 1.4rem;
+        margin-bottom: 16px;
+    }
+    
+    .sobre-texto p {
+        font-size: 0.9rem;
+    }
+    
+    /* Achievements */
+    .achievements {
+        padding: 20px;
+        margin-top: 24px;
+    }
+    
+    .achievements h3 {
+        font-size: 1rem;
+        margin-bottom: 16px;
+    }
+    
     .achievements-grid {
         grid-template-columns: 1fr;
+        gap: 12px;
     }
     
+    .achievement-card {
+        padding: 14px;
+    }
+    
+    .achievement-icon {
+        font-size: 1.3rem;
+    }
+    
+    .achievement-content strong {
+        font-size: 0.85rem;
+    }
+    
+    .achievement-content span {
+        font-size: 0.75rem;
+    }
+    
+    /* Schedule Card */
     .schedule-card {
         padding: 20px;
     }
     
+    .schedule-header {
+        margin-bottom: 20px;
+        padding-bottom: 16px;
+    }
+    
+    .schedule-icon {
+        font-size: 2rem;
+    }
+    
+    .schedule-header h3 {
+        font-size: 1.1rem;
+    }
+    
+    .schedule-list {
+        gap: 10px;
+    }
+    
     .schedule-item {
+        padding: 12px;
         flex-wrap: wrap;
         gap: 8px;
     }
     
-    .schedule-item .day-badge {
-        order: 1;
+    .day-badge {
+        font-size: 0.65rem;
+        padding: 5px 8px;
+        min-width: 44px;
     }
     
-    .schedule-item .time {
-        order: 2;
-        min-width: auto;
+    .time {
+        font-size: 0.85rem;
+        min-width: 90px;
     }
     
-    .schedule-item .stream-type {
-        order: 3;
+    .stream-type {
+        font-size: 0.75rem;
         width: 100%;
-        padding-left: 62px;
+        padding-left: 52px;
+    }
+    
+    .schedule-cta {
+        padding: 12px;
+        font-size: 0.85rem;
+    }
+    
+    /* Parceiros Section */
+    .parceiros-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    
+    .parceiro-card {
+        padding: 24px 20px;
+    }
+    
+    .parceiro-card.brincar-card .brincar-logo-img {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .parceiro-card.brincar-card h3 {
+        font-size: 1.1rem;
+    }
+    
+    .parceiro-card.brincar-card p {
+        font-size: 0.85rem;
+    }
+    
+    .btn-brincar {
+        padding: 10px 18px;
+        font-size: 0.85rem;
+    }
+    
+    .parceiro-card.placeholder-card .placeholder-icon {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .parceiro-card.placeholder-card h3 {
+        font-size: 1.1rem;
+    }
+    
+    .parceiro-card.placeholder-card p {
+        font-size: 0.85rem;
+    }
+    
+    /* Contact Section */
+    .contacto-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        max-width: 100%;
+    }
+    
+    .contacto-card {
+        padding: 24px 20px;
+    }
+    
+    .contacto-card-icon {
+        width: 56px;
+        height: 56px;
+        margin-bottom: 20px;
+    }
+    
+    .contacto-card-icon svg {
+        width: 28px;
+        height: 28px;
+    }
+    
+    .card-label {
+        font-size: 0.65rem;
+    }
+    
+    .card-value {
+        font-size: 1rem;
+    }
+    
+    .creator-code-wrapper {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+    
+    .creator-code,
+    .gtz-shop-code {
+        font-size: 1.1rem;
+        padding: 6px 12px;
+    }
+    
+    .btn-copy-code {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .card-description {
+        font-size: 0.8rem;
+    }
+    
+    .card-action {
+        margin-top: 20px;
+        padding: 10px 16px;
+        font-size: 0.8rem;
+    }
+    
+    .card-badge {
+        font-size: 0.6rem;
+        padding: 3px 8px;
+        top: 16px;
+        right: 16px;
+    }
+    
+    /* Footer */
+    .footer-content {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+    
+    .footer-social {
+        gap: 10px;
+    }
+    
+    .social-link {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .footer-copy {
+        font-size: 0.8rem;
+    }
+}
+
+/* Small Phones (480px and below) */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 16px;
+    }
+    
+    :root {
+        --section-padding: 50px;
+    }
+    
+    /* Hero further refinements */
+    .hero-card {
+        padding: 24px 16px;
+        border-radius: 12px;
+    }
+    
+    .profile-photo-frame {
+        width: 110px;
+        height: 110px;
+    }
+    
+    .hero-name {
+        font-size: 1.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 0.85rem;
+    }
+    
+    .hero-description {
+        font-size: 0.85rem;
+    }
+    
+    /* Stats - better spacing */
+    .hero-stats {
+        gap: 8px;
+    }
+    
+    .stat-box {
+        padding: 14px 8px;
+    }
+    
+    .stat-number {
+        font-size: 1.2rem;
+    }
+    
+    .stat-label {
+        font-size: 0.7rem;
+    }
+    
+    /* Section headers */
+    .section-header h2 {
+        font-size: 1.25rem;
+    }
+    
+    /* Schedule adjustments */
+    .schedule-card {
+        padding: 16px;
+    }
+    
+    .schedule-item {
+        padding: 10px;
+    }
+    
+    .day-badge {
+        font-size: 0.6rem;
+        padding: 4px 6px;
+        min-width: 40px;
+    }
+    
+    .time {
+        font-size: 0.8rem;
+        min-width: 80px;
+    }
+    
+    .stream-type {
+        font-size: 0.7rem;
+        padding-left: 46px;
+    }
+    
+    /* Contact cards */
+    .contacto-card {
+        padding: 20px 16px;
+    }
+    
+    .creator-code,
+    .gtz-shop-code {
+        font-size: 1rem;
+        letter-spacing: 0.5px;
+    }
+}
+
+/* Extra Small Phones (360px and below) */
+@media (max-width: 360px) {
+    .container {
+        padding: 0 12px;
+    }
+    
+    /* Hero minimal */
+    .profile-photo-frame {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .hero-name {
+        font-size: 1.3rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 0.8rem;
+    }
+    
+    /* Stats single column for very small screens */
+    .hero-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 6px;
+    }
+    
+    .stat-box {
+        padding: 12px 6px;
+    }
+    
+    .stat-number {
+        font-size: 1.1rem;
+    }
+    
+    .stat-label {
+        font-size: 0.65rem;
+    }
+    
+    /* Schedule minimal */
+    .schedule-header h3 {
+        font-size: 1rem;
+    }
+    
+    .day-badge {
+        font-size: 0.55rem;
+        min-width: 36px;
+    }
+    
+    .time {
+        font-size: 0.75rem;
+        min-width: 70px;
+    }
+    
+    /* Partner cards minimal */
+    .parceiro-card {
+        padding: 20px 16px;
+    }
+    
+    .parceiro-card.brincar-card .brincar-logo-img {
+        width: 50px;
+        height: 50px;
+    }
+    
+    /* Contact minimal */
+    .contacto-card-icon {
+        width: 48px;
+        height: 48px;
+    }
+    
+    .contacto-card-icon svg {
+        width: 24px;
+        height: 24px;
+    }
+    
+    .creator-code,
+    .gtz-shop-code {
+        font-size: 0.9rem;
+        padding: 5px 10px;
+    }
+    
+    .card-value {
+        font-size: 0.9rem;
+    }
+}
+
+/* Touch target optimization for mobile */
+@media (max-width: 768px) {
+    .btn,
+    .card-action,
+    .schedule-cta,
+    .btn-brincar,
+    .btn-placeholder,
+    .social-link,
+    .btn-copy-code {
+        min-height: 44px;
+    }
+    
+    .nav-links a {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 }
 
@@ -1984,7 +2518,7 @@ ul {
     transform: translateY(-2px);
 }
 
-/* Responsive Updates */
+/* Additional Responsive Adjustments */
 @media (max-width: 1024px) {
     .parceiros-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -1997,53 +2531,14 @@ ul {
 @media (max-width: 768px) {
     .parceiros-grid {
         grid-template-columns: 1fr;
-        gap: 40px;
-        max-width: 500px;
-        margin: 0 auto;
-    }
-}
-
-@media (max-width: 768px) {
-    .parceiro-card {
-        padding: 32px 24px;
-    }
-
-    .contacto-item {
-        flex-direction: column;
-        text-align: center;
-        gap: 12px;
-    }
-    
-    .footer-content {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .contacto-grid {
-        grid-template-columns: 1fr;
         gap: 20px;
         max-width: 400px;
         margin: 0 auto;
     }
     
-    .contacto-card {
-        padding: 28px 24px;
-    }
-    
-    .creator-code-wrapper {
-        flex-wrap: wrap;
-    }
-    
-    .creator-code {
-        font-size: 1.1rem;
-    }
-}
-
-@media (max-width: 1024px) {
-    .contacto-grid {
-        grid-template-columns: 1fr;
-        gap: 24px;
-        max-width: 450px;
-        margin: 0 auto;
+    .contacto-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
     }
 }
