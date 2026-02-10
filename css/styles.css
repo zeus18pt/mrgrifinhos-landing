@@ -2872,23 +2872,61 @@ ul {
         line-height: 1.4;
     }
 
+    /* Parceiros: tighten spacing and prevent overflow/cropping on iPhone width */
+    .parceiros .container {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
     .parceiros-grid {
         gap: 12px;
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
     }
 
     .parceiro-card,
     .parceiro-card.brincar-card,
     .parceiro-card.placeholder-card {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
         padding: 16px 14px;
         border-radius: 14px;
+        box-sizing: border-box;
     }
 
     .parceiro-card.gtz-card {
         padding: 10px;
     }
 
+    .parceiro-card.gtz-card .gtz-image-link,
+    .parceiro-card.gtz-card .gtz-promo-img {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .parceiro-card.brincar-card .brincar-content {
+        width: 100%;
+        min-width: 0;
+    }
+
     .parceiro-card.brincar-card .brincar-logo-img {
         width: 50px;
         height: 50px;
+    }
+
+    .parceiro-card.brincar-card h3,
+    .parceiro-card.brincar-card p {
+        overflow-wrap: anywhere;
+        word-break: break-word;
+    }
+
+    .parceiro-card.brincar-card .btn-brincar {
+        width: 100%;
+        max-width: 220px;
+        text-align: center;
     }
 }
