@@ -898,6 +898,10 @@ ul {
         grid-template-columns: repeat(2, 1fr);
     }
     
+    .apoia-grid {
+        grid-template-columns: 1fr;
+    }
+    
     .sobre-pilares {
         flex-direction: column;
     }
