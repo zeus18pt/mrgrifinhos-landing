@@ -88,17 +88,16 @@ ul {
     font-weight: 700;
 }
 
-.logo-icon {
+.logo-img {
     width: 36px;
     height: 36px;
-    background: var(--primary);
-    color: var(--dark);
     border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.2rem;
-    font-weight: 900;
+}
+
+.logo-img-small {
+    width: 28px;
+    height: 28px;
+    border-radius: 6px;
 }
 
 .logo-text {
