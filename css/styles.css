@@ -1349,9 +1349,9 @@ ul {
 
 .parceiros-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 32px;
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -1385,6 +1385,16 @@ ul {
 
 .parceiro-card.gtz-card .gtz-logo-large img {
     filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+
+/* GTZ Promotional Image */
+.gtz-promo-img {
+    width: 100%;
+    max-width: 240px;
+    height: auto;
+    border-radius: 12px;
+    display: block;
+    object-fit: cover;
 }
 
 .parceiro-card.gtz-card h3 {
@@ -1688,6 +1698,15 @@ ul {
 
 /* Responsive Updates */
 @media (max-width: 1024px) {
+    .parceiros-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
     .parceiros-grid {
         grid-template-columns: 1fr;
         gap: 40px;
