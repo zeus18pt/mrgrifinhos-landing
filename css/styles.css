@@ -1430,17 +1430,29 @@ ul {
     border-color: rgba(46, 204, 113, 0.6);
 }
 
-.brincar-content-link {
+.brincar-content {
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-decoration: none;
-    color: inherit;
-    transition: transform 0.3s ease;
+    text-align: center;
 }
 
-.brincar-content-link:hover {
+.btn-brincar {
+    margin-top: 16px;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.btn-brincar:hover {
     transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(46, 204, 113, 0.4);
 }
 
 .parceiro-card.brincar-card .brincar-logo-img {
