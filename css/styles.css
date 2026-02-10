@@ -1596,68 +1596,288 @@ ul {
     margin-bottom: 16px;
 }
 
-/* Contacto Section */
+/* Contacto Section - Elegant Card Design */
 .contacto {
     padding: var(--section-padding) 0;
     background: linear-gradient(180deg, var(--dark-light) 0%, var(--dark) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.contacto::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 800px;
+    height: 400px;
+    background: radial-gradient(ellipse at center, rgba(0, 255, 136, 0.05) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+.section-tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--primary);
+    background: rgba(0, 255, 136, 0.1);
+    padding: 6px 16px;
+    border-radius: 20px;
+    margin-bottom: 16px;
+    border: 1px solid rgba(0, 255, 136, 0.2);
 }
 
 .contacto-content {
-    display: flex;
-    justify-content: center;
-    max-width: 600px;
+    max-width: 1000px;
     margin: 0 auto;
+    position: relative;
+    z-index: 1;
 }
 
-.contacto-info h3 {
-    font-family: var(--font-display);
-    font-size: 1.5rem;
-    margin-bottom: 16px;
+.contacto-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
 }
 
-.contacto-info > p {
-    color: var(--gray);
-    margin-bottom: 32px;
-    line-height: 1.7;
-}
-
-.contacto-detalhes {
+.contacto-card {
+    position: relative;
+    background: linear-gradient(135deg, rgba(15, 29, 51, 0.9) 0%, rgba(10, 22, 40, 0.95) 100%);
+    border-radius: 20px;
+    padding: 32px 28px;
+    border: 1px solid rgba(0, 255, 136, 0.1);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
     display: flex;
     flex-direction: column;
-    gap: 20px;
 }
 
-.contacto-item {
+.contacto-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(0, 255, 136, 0.4), transparent);
+}
+
+.card-glow {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle at center, rgba(0, 255, 136, 0.03) 0%, transparent 50%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+}
+
+.contacto-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(0, 255, 136, 0.25);
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.4),
+        0 0 60px rgba(0, 255, 136, 0.08);
+}
+
+.contacto-card:hover .card-glow {
+    opacity: 1;
+}
+
+/* Email Card Specific */
+.email-card .contacto-card-icon {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.15) 0%, rgba(37, 99, 235, 0.1) 100%);
+    color: #60a5fa;
+}
+
+.email-card:hover .contacto-card-icon {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.25) 0%, rgba(37, 99, 235, 0.2) 100%);
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.3);
+}
+
+/* Creator Code Card Specific */
+.code-card .contacto-card-icon {
+    background: linear-gradient(135deg, rgba(0, 255, 136, 0.15) 0%, rgba(0, 204, 106, 0.1) 100%);
+    color: var(--primary);
+}
+
+.code-card:hover .contacto-card-icon {
+    background: linear-gradient(135deg, rgba(0, 255, 136, 0.25) 0%, rgba(0, 204, 106, 0.2) 100%);
+    box-shadow: 0 0 30px rgba(0, 255, 136, 0.3);
+}
+
+/* CTA Card Specific */
+.cta-card .contacto-card-icon {
+    background: linear-gradient(135deg, rgba(145, 70, 255, 0.15) 0%, rgba(124, 58, 237, 0.1) 100%);
+    color: #a78bfa;
+}
+
+.cta-card:hover .contacto-card-icon {
+    background: linear-gradient(135deg, rgba(145, 70, 255, 0.25) 0%, rgba(124, 58, 237, 0.2) 100%);
+    box-shadow: 0 0 30px rgba(145, 70, 255, 0.3);
+}
+
+.contacto-card-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
     display: flex;
     align-items: center;
-    gap: 16px;
-    padding: 20px 24px;
-    background: var(--dark);
-    border-radius: 12px;
-    border: 1px solid rgba(0, 255, 136, 0.1);
+    justify-content: center;
+    margin-bottom: 24px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.contacto-icon {
-    font-size: 1.5rem;
+.contacto-card-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
 }
 
-.contacto-item strong {
-    display: block;
-    margin-bottom: 4px;
-    color: var(--light);
-}
-
-.contacto-item a {
-    color: var(--primary);
-    transition: color 0.2s;
-}
-
-.contacto-item a:hover {
-    color: var(--light);
-}
-
-.contacto-item span:not(.contacto-icon) {
+.card-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
     color: var(--gray);
+    margin-bottom: 8px;
+}
+
+.card-value {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--light);
+    letter-spacing: 0.5px;
+}
+
+.email-link {
+    transition: color 0.3s ease;
+}
+
+.email-link:hover {
+    color: #60a5fa;
+}
+
+.creator-code-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 8px;
+}
+
+.creator-code {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--primary);
+    letter-spacing: 1px;
+    background: linear-gradient(135deg, rgba(0, 255, 136, 0.1) 0%, rgba(0, 204, 106, 0.05) 100%);
+    padding: 8px 16px;
+    border-radius: 10px;
+    border: 2px dashed rgba(0, 255, 136, 0.3);
+}
+
+.btn-copy-code {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 255, 136, 0.1);
+    border: 1px solid rgba(0, 255, 136, 0.2);
+    border-radius: 8px;
+    color: var(--primary);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-copy-code:hover {
+    background: var(--primary);
+    color: var(--dark);
+    transform: scale(1.05);
+}
+
+.btn-copy-code:active {
+    transform: scale(0.95);
+}
+
+.card-description {
+    font-size: 0.85rem;
+    color: var(--gray);
+    line-height: 1.6;
+    margin-top: 12px;
+}
+
+.cta-title {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--light);
+    margin: 0;
+}
+
+.card-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--dark);
+    background: var(--primary);
+    padding: 4px 10px;
+    border-radius: 20px;
+}
+
+.card-action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 24px;
+    padding: 12px 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--light);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.card-action:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateX(4px);
+}
+
+.card-action svg {
+    transition: transform 0.3s ease;
+}
+
+.card-action:hover svg {
+    transform: translateX(4px);
+}
+
+.cta-action {
+    background: linear-gradient(135deg, rgba(145, 70, 255, 0.2) 0%, rgba(124, 58, 237, 0.15) 100%);
+    border-color: rgba(145, 70, 255, 0.3);
+    color: #c4b5fd;
+}
+
+.cta-action:hover {
+    background: linear-gradient(135deg, rgba(145, 70, 255, 0.3) 0%, rgba(124, 58, 237, 0.25) 100%);
+    border-color: rgba(145, 70, 255, 0.5);
+    color: #ddd6fe;
 }
 
 .btn-full {
@@ -1725,5 +1945,33 @@ ul {
     .footer-content {
         flex-direction: column;
         gap: 20px;
+    }
+
+    .contacto-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        max-width: 400px;
+        margin: 0 auto;
+    }
+    
+    .contacto-card {
+        padding: 28px 24px;
+    }
+    
+    .creator-code-wrapper {
+        flex-wrap: wrap;
+    }
+    
+    .creator-code {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .contacto-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        max-width: 450px;
+        margin: 0 auto;
     }
 }

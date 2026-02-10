@@ -95,3 +95,62 @@ function initContactForm() {
         // });
     });
 }
+
+/**
+ * Copy creator code to clipboard
+ */
+function copyCreatorCode() {
+    const code = 'MRGRIFINHOS';
+    
+    if (navigator.clipboard && window.isSecureContext) {
+        navigator.clipboard.writeText(code).then(() => {
+            showCopyFeedback();
+        }).catch(err => {
+            console.error('Failed to copy:', err);
+            fallbackCopy(code);
+        });
+    } else {
+        fallbackCopy(code);
+    }
+}
+
+function fallbackCopy(text) {
+    const textArea = document.createElement('textarea');
+    textArea.value = text;
+    textArea.style.position = 'fixed';
+    textArea.style.left = '-999999px';
+    document.body.appendChild(textArea);
+    textArea.select();
+    
+    try {
+        document.execCommand('copy');
+        showCopyFeedback();
+    } catch (err) {
+        console.error('Fallback copy failed:', err);
+    }
+    
+    document.body.removeChild(textArea);
+}
+
+function showCopyFeedback() {
+    const btn = document.querySelector('.btn-copy-code');
+    if (!btn) return;
+    
+    const originalHTML = btn.innerHTML;
+    
+    // Change to checkmark
+    btn.innerHTML = `
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 6L9 17l-5-5"></path>
+        </svg>
+    `;
+    btn.style.background = 'var(--primary)';
+    btn.style.color = 'var(--dark)';
+    
+    // Revert after 2 seconds
+    setTimeout(() => {
+        btn.innerHTML = originalHTML;
+        btn.style.background = '';
+        btn.style.color = '';
+    }, 2000);
+}
