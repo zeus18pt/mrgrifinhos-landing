@@ -1036,6 +1036,14 @@ ul {
     .hero-buttons {
         justify-content: center;
     }
+    
+    /* Contacto grid on tablet */
+    .contacto-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        max-width: 450px;
+        margin: 0 auto;
+    }
 }
 
 @media (max-width: 768px) {
@@ -1141,6 +1149,30 @@ ul {
         order: 3;
         width: 100%;
         padding-left: 62px;
+    }
+    
+    /* Parceiros grid on mobile */
+    .parceiros-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+    
+    .parceiro-card {
+        padding: 24px 20px;
+    }
+    
+    /* Contacto grid on mobile */
+    .contacto-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+    
+    .contacto-card {
+        padding: 24px 20px;
     }
 }
 
@@ -1989,58 +2021,361 @@ ul {
         max-width: 800px;
         margin: 0 auto;
     }
-}
-
-@media (max-width: 768px) {
-    .parceiros-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-        max-width: 500px;
-        margin: 0 auto;
-    }
-}
-
-@media (max-width: 768px) {
-    .parceiro-card {
-        padding: 32px 24px;
-    }
-
-    .contacto-item {
-        flex-direction: column;
-        text-align: center;
-        gap: 12px;
-    }
     
-    .footer-content {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .contacto-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-        max-width: 400px;
-        margin: 0 auto;
-    }
-    
-    .contacto-card {
-        padding: 28px 24px;
-    }
-    
-    .creator-code-wrapper {
-        flex-wrap: wrap;
-    }
-    
-    .creator-code {
-        font-size: 1.1rem;
-    }
-}
-
-@media (max-width: 1024px) {
     .contacto-grid {
         grid-template-columns: 1fr;
         gap: 24px;
         max-width: 450px;
         margin: 0 auto;
+    }
+}
+
+/* Small Mobile Screens (375px and below) */
+@media (max-width: 480px) {
+    /* Container adjustments */
+    .container {
+        padding: 0 16px;
+    }
+    
+    /* Navbar adjustments */
+    .navbar {
+        padding: 12px 0;
+    }
+    
+    .logo-text {
+        font-size: 0.9rem;
+    }
+    
+    .logo-img {
+        width: 28px;
+        height: 28px;
+    }
+    
+    .btn-primary {
+        padding: 8px 14px;
+        font-size: 0.8rem;
+    }
+    
+    /* Hero section mobile fixes */
+    .hero {
+        padding-top: 100px;
+        padding-bottom: 40px;
+    }
+    
+    .hero-card {
+        padding: 24px 16px;
+        border-radius: 16px;
+        gap: 24px;
+    }
+    
+    .profile-photo-frame {
+        width: 120px;
+        height: 120px;
+        padding: 4px;
+    }
+    
+    .hero-name {
+        font-size: 1.6rem;
+        letter-spacing: 1px;
+    }
+    
+    .hero-subtitle {
+        font-size: 0.9rem;
+    }
+    
+    .hero-description {
+        font-size: 0.9rem;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+    
+    .hero-buttons {
+        gap: 10px;
+    }
+    
+    .btn-twitch,
+    .btn-hero-outline {
+        padding: 12px 20px;
+        font-size: 0.85rem;
+    }
+    
+    .gtz-badge-red {
+        font-size: 0.75rem;
+        padding: 5px 12px;
+    }
+    
+    .badge-logo-small {
+        width: 14px;
+        height: 14px;
+    }
+    
+    /* Hero stats mobile */
+    .hero-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        padding: 20px 0;
+    }
+    
+    .stat-box {
+        padding: 14px 8px;
+    }
+    
+    .stat-number {
+        font-size: 1.25rem;
+    }
+    
+    .stat-label {
+        font-size: 0.75rem;
+    }
+    
+    /* Section headers mobile */
+    .section-header h2 {
+        font-size: 1.4rem;
+    }
+    
+    .section-header p {
+        font-size: 0.9rem;
+    }
+    
+    .section-tag {
+        font-size: 0.65rem;
+        padding: 4px 12px;
+    }
+    
+    /* Sobre section mobile */
+    .sobre {
+        padding: 60px 0;
+    }
+    
+    .sobre-texto h2 {
+        font-size: 1.4rem;
+    }
+    
+    .sobre-texto p {
+        font-size: 0.9rem;
+    }
+    
+    .achievements {
+        padding: 16px;
+        margin-top: 24px;
+    }
+    
+    .achievements h3 {
+        font-size: 1rem;
+    }
+    
+    .achievement-card {
+        padding: 12px;
+    }
+    
+    .achievement-icon {
+        font-size: 1.25rem;
+    }
+    
+    .achievement-content strong {
+        font-size: 0.85rem;
+    }
+    
+    .achievement-content span {
+        font-size: 0.75rem;
+    }
+    
+    /* Schedule card mobile fixes */
+    .schedule-card {
+        padding: 16px;
+        border-radius: 16px;
+    }
+    
+    .schedule-header {
+        padding-bottom: 16px;
+        margin-bottom: 16px;
+    }
+    
+    .schedule-icon {
+        font-size: 2rem;
+    }
+    
+    .schedule-header h3 {
+        font-size: 1rem;
+    }
+    
+    .schedule-item {
+        padding: 10px 12px;
+        gap: 8px;
+    }
+    
+    .day-badge {
+        font-size: 0.65rem;
+        padding: 4px 8px;
+        min-width: 42px;
+    }
+    
+    .time {
+        font-size: 0.8rem;
+        min-width: 90px;
+    }
+    
+    .stream-type {
+        font-size: 0.75rem;
+    }
+    
+    .schedule-cta {
+        padding: 12px;
+        font-size: 0.85rem;
+    }
+    
+    /* Parceiros section mobile */
+    .parceiros {
+        padding: 60px 0;
+    }
+    
+    .parceiros-grid {
+        gap: 16px;
+    }
+    
+    .parceiro-card {
+        padding: 20px 16px;
+        border-radius: 16px;
+    }
+    
+    .parceiro-card.brincar-card {
+        padding: 20px 16px;
+    }
+    
+    .parceiro-card.brincar-card .brincar-logo-img {
+        width: 56px;
+        height: 56px;
+    }
+    
+    .parceiro-card.brincar-card h3 {
+        font-size: 1rem;
+    }
+    
+    .parceiro-card.brincar-card p {
+        font-size: 0.85rem;
+    }
+    
+    .btn-brincar {
+        padding: 10px 16px;
+        font-size: 0.85rem;
+    }
+    
+    .parceiro-card.placeholder-card .placeholder-icon {
+        width: 64px;
+        height: 64px;
+    }
+    
+    .parceiro-card.placeholder-card h3 {
+        font-size: 1rem;
+    }
+    
+    .parceiro-card.placeholder-card p {
+        font-size: 0.85rem;
+    }
+    
+    .btn-placeholder {
+        padding: 10px 16px;
+        font-size: 0.85rem;
+    }
+    
+    /* Contacto section mobile fixes */
+    .contacto {
+        padding: 60px 0;
+    }
+    
+    .contacto-grid {
+        gap: 16px;
+    }
+    
+    .contacto-card {
+        padding: 20px 16px;
+        border-radius: 16px;
+    }
+    
+    .contacto-card-icon {
+        width: 52px;
+        height: 52px;
+        margin-bottom: 16px;
+    }
+    
+    .contacto-card-icon svg {
+        width: 24px;
+        height: 24px;
+    }
+    
+    .card-label {
+        font-size: 0.65rem;
+    }
+    
+    .card-value {
+        font-size: 0.95rem;
+    }
+    
+    .email-link {
+        font-size: 0.9rem;
+        word-break: break-all;
+    }
+    
+    .creator-code {
+        font-size: 1.1rem;
+        padding: 6px 12px;
+    }
+    
+    .gtz-shop-code {
+        font-size: 1.1rem;
+        padding: 6px 12px;
+    }
+    
+    .btn-copy-code {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .card-description {
+        font-size: 0.8rem;
+    }
+    
+    .card-badge {
+        font-size: 0.6rem;
+        padding: 3px 8px;
+        top: 16px;
+        right: 16px;
+    }
+    
+    .card-action {
+        padding: 10px 16px;
+        font-size: 0.8rem;
+        margin-top: 16px;
+    }
+    
+    /* Footer mobile */
+    .footer {
+        padding: 24px 0;
+    }
+    
+    .footer-content {
+        gap: 12px;
+    }
+    
+    .footer-brand .logo-text {
+        font-size: 1rem;
+    }
+    
+    .footer-social {
+        gap: 8px;
+    }
+    
+    .social-link {
+        width: 38px;
+        height: 38px;
+    }
+    
+    .social-link svg {
+        width: 18px;
+        height: 18px;
+    }
+    
+    .footer-copy {
+        font-size: 0.75rem;
     }
 }
