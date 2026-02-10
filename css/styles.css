@@ -1102,3 +1102,208 @@ ul {
         text-align: center;
     }
 }
+
+/* ============================================================
+   PARCEIROS SECTION - Partner Cards
+   ============================================================ */
+
+.parceiros {
+    padding: var(--section-padding) 0;
+    background: var(--dark);
+}
+
+.parceiros-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.parceiro-card {
+    background: var(--dark-light);
+    border-radius: 20px;
+    padding: 40px 32px;
+    text-align: center;
+    border: 1px solid rgba(0, 255, 136, 0.1);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.parceiro-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-4px);
+}
+
+/* GTZ Card */
+.parceiro-card.gtz-card {
+    border: 2px solid rgba(220, 38, 38, 0.3);
+    padding: 24px;
+}
+
+.parceiro-card.gtz-card:hover {
+    border-color: rgba(220, 38, 38, 0.6);
+}
+
+.gtz-image-link {
+    display: block;
+    width: 100%;
+    transition: transform 0.3s ease;
+}
+
+.gtz-image-link:hover {
+    transform: scale(1.02);
+}
+
+.gtz-promo-img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    display: block;
+    object-fit: cover;
+}
+
+/* Brincar Automóveis Card */
+.parceiro-card.brincar-card {
+    border: 2px solid rgba(46, 204, 113, 0.3);
+    padding: 32px 24px;
+}
+
+.parceiro-card.brincar-card:hover {
+    border-color: rgba(46, 204, 113, 0.6);
+}
+
+.parceiro-card.brincar-card .brincar-logo-img {
+    width: 70px;
+    height: 70px;
+    border-radius: 12px;
+    display: block;
+    object-fit: cover;
+    margin-bottom: 16px;
+}
+
+.parceiro-card.brincar-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    color: var(--light);
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.parceiro-card.brincar-card p {
+    color: var(--gray);
+    font-size: 0.9rem;
+    text-align: center;
+    line-height: 1.5;
+    margin: 0 0 20px 0;
+}
+
+/* Brincar CTA Button */
+.btn-brincar-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+    color: #fff;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(46, 204, 113, 0.3);
+    margin-top: auto;
+}
+
+.btn-brincar-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(46, 204, 113, 0.4);
+}
+
+.btn-brincar-cta svg {
+    transition: transform 0.3s ease;
+}
+
+.btn-brincar-cta:hover svg {
+    transform: translateX(4px);
+}
+
+/* Placeholder Card */
+.parceiro-card.placeholder-card {
+    border: 2px dashed rgba(139, 155, 180, 0.3);
+    background: linear-gradient(135deg, rgba(15, 29, 51, 0.5) 0%, rgba(10, 22, 40, 0.7) 100%);
+}
+
+.parceiro-card.placeholder-card:hover {
+    border-color: rgba(139, 155, 180, 0.5);
+    background: linear-gradient(135deg, rgba(15, 29, 51, 0.6) 0%, rgba(10, 22, 40, 0.8) 100%);
+}
+
+.parceiro-card.placeholder-card .placeholder-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 16px;
+    border: 2px dashed rgba(139, 155, 180, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gray);
+    margin-bottom: 16px;
+}
+
+.parceiro-card.placeholder-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    color: var(--gray-light);
+    margin-bottom: 8px;
+}
+
+.parceiro-card.placeholder-card p {
+    color: var(--gray);
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+}
+
+.btn-placeholder {
+    background: transparent;
+    border: 1px solid rgba(139, 155, 180, 0.5);
+    color: var(--gray-light);
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    margin-top: auto;
+}
+
+.btn-placeholder:hover {
+    background: rgba(139, 155, 180, 0.1);
+    border-color: var(--gray-light);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .parceiros-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+        max-width: 800px;
+    }
+}
+
+@media (max-width: 768px) {
+    .parceiros-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        max-width: 400px;
+    }
+    
+    .parceiro-card {
+        padding: 32px 24px;
+    }
+}
