@@ -2835,6 +2835,11 @@ ul {
 
 /* Small Phones (480px and below) - extended coverage for 376px-479px */
 @media (max-width: 480px) {
+    /* Hide navbar Twitch button on small screens - hero button is sufficient */
+    .navbar .btn-primary {
+        display: none;
+    }
+    
     /* Ensure achievements don't overflow */
     .achievements-grid {
         grid-template-columns: 1fr;
