@@ -1539,106 +1539,160 @@ ul {
     }
 }
 
-/* Small Phones (480px and below) */
-@media (max-width: 480px) {
+/* iPhone SE / Small Phones (375px and below) */
+@media (max-width: 375px) {
     .container {
         padding: 0 12px;
     }
     
-    :root {
-        --section-padding: 50px;
+    /* Achievements Section - O Que Me Define - Fix overflow issues */
+    .achievements {
+        padding: 14px 10px;
+        margin-top: 16px;
+        width: 100%;
+        box-sizing: border-box;
     }
     
-    /* Hero further refinements */
-    .hero-card {
-        padding: 20px 14px;
-        border-radius: 12px;
+    .achievements h3 {
+        font-size: 0.9rem;
+        margin-bottom: 12px;
+        text-align: center;
     }
     
-    .profile-photo-frame {
-        width: 100px;
-        height: 100px;
+    .achievements-grid {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        width: 100%;
     }
     
-    .hero-name {
-        font-size: 1.4rem;
-        letter-spacing: 1px;
+    .achievement-card {
+        padding: 12px 10px;
+        gap: 10px;
+        width: 100%;
+        box-sizing: border-box;
+        min-width: 0;
     }
     
-    .hero-subtitle {
+    .achievement-icon {
+        font-size: 1.3rem;
+        flex-shrink: 0;
+    }
+    
+    .achievement-content {
+        min-width: 0;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        word-break: break-word;
+    }
+    
+    .achievement-content strong {
+        font-size: 0.85rem;
+        line-height: 1.3;
+        margin-bottom: 4px;
+    }
+    
+    .achievement-content span {
+        font-size: 0.8rem;
+        line-height: 1.4;
+    }
+    
+    /* Parceiros Section - Partner cards sizing fixes */
+    .parceiros-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        width: 100%;
+        max-width: 100%;
+        padding: 0;
+    }
+    
+    .parceiro-card {
+        padding: 16px 14px;
+        width: 100%;
+        box-sizing: border-box;
+        border-radius: 14px;
+    }
+    
+    /* GTZ Card specific fixes */
+    .parceiro-card.gtz-card {
+        padding: 10px;
+    }
+    
+    .gtz-promo-img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+    
+    /* Brincar Card specific fixes */
+    .parceiro-card.brincar-card {
+        padding: 16px 14px;
+    }
+    
+    .parceiro-card.brincar-card .brincar-logo-img {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 10px;
+    }
+    
+    .parceiro-card.brincar-card h3 {
+        font-size: 0.95rem;
+        margin-bottom: 6px;
+    }
+    
+    .parceiro-card.brincar-card p {
+        font-size: 0.8rem;
+        line-height: 1.4;
+        margin-bottom: 12px;
+    }
+    
+    .btn-brincar {
+        padding: 10px 16px;
         font-size: 0.8rem;
     }
     
-    .hero-description {
-        font-size: 0.85rem;
-        line-height: 1.5;
+    /* Placeholder Card fixes */
+    .parceiro-card.placeholder-card {
+        padding: 16px 14px;
     }
     
-    .btn-twitch,
-    .btn-hero-outline {
+    .parceiro-card.placeholder-card .placeholder-icon {
+        width: 48px;
+        height: 48px;
+        margin-bottom: 10px;
+    }
+    
+    .parceiro-card.placeholder-card .placeholder-icon svg {
+        width: 24px;
+        height: 24px;
+    }
+    
+    .parceiro-card.placeholder-card h3 {
+        font-size: 0.95rem;
+        margin-bottom: 6px;
+    }
+    
+    .parceiro-card.placeholder-card p {
+        font-size: 0.8rem;
+        line-height: 1.4;
+        margin-bottom: 12px;
+    }
+    
+    .btn-placeholder {
         padding: 10px 16px;
-        font-size: 0.85rem;
+        font-size: 0.8rem;
     }
     
-    /* Stats - better spacing */
-    .hero-stats {
-        gap: 6px;
+    /* Section header adjustments */
+    .section-header {
+        margin-bottom: 24px;
     }
     
-    .stat-box {
-        padding: 12px 6px;
-    }
-    
-    .stat-number {
+    .section-header h2 {
         font-size: 1.1rem;
     }
     
-    .stat-label {
-        font-size: 0.65rem;
-    }
-    
-    /* Section headers */
-    .section-header h2 {
-        font-size: 1.25rem;
-    }
-    
-    /* Schedule adjustments */
-    .schedule-card {
-        padding: 16px 12px;
-    }
-    
-    .schedule-item {
-        padding: 10px 8px;
-    }
-    
-    .day-badge {
-        font-size: 0.6rem;
-        padding: 4px 6px;
-        min-width: 38px;
-    }
-    
-    .time {
-        font-size: 0.75rem;
-    }
-    
-    .stream-type {
-        font-size: 0.7rem;
-    }
-    
-    /* Contact cards */
-    .contacto-card {
-        padding: 20px 14px;
-    }
-    
-    .creator-code,
-    .gtz-shop-code {
-        font-size: 0.95rem;
-        letter-spacing: 0.5px;
-    }
-    
-    .creator-code-wrapper {
-        flex-wrap: wrap;
-        gap: 8px;
+    .section-header p {
+        font-size: 0.85rem;
     }
 }
 
@@ -2627,5 +2681,284 @@ ul {
         flex-direction: column;
         text-align: center;
         gap: 12px;
+    }
+}
+
+/* Mobile fix v3: prevent overflow in "O que me define" and normalize partner card sizing */
+@media (max-width: 768px) {
+    .achievements-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .achievement-card {
+        width: 100%;
+        min-width: 0;
+        box-sizing: border-box;
+    }
+
+    .achievement-content {
+        min-width: 0;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+    }
+
+    .parceiros-grid {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+    }
+
+    .parceiro-card {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .gtz-promo-img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 375px) {
+    .achievements {
+        padding: 14px 10px;
+    }
+
+    .achievement-card {
+        padding: 12px 10px;
+        gap: 10px;
+    }
+
+    .achievement-content strong {
+        font-size: 0.85rem;
+        line-height: 1.3;
+    }
+
+    .achievement-content span {
+        font-size: 0.8rem;
+        line-height: 1.4;
+    }
+
+    /* Parceiros: tighten spacing and prevent overflow/cropping on iPhone width */
+    .parceiros .container {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .parceiros-grid {
+        gap: 12px;
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .parceiro-card,
+    .parceiro-card.brincar-card,
+    .parceiro-card.placeholder-card {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        padding: 16px 14px;
+        border-radius: 14px;
+        box-sizing: border-box;
+    }
+
+    .parceiro-card.gtz-card {
+        padding: 10px;
+    }
+
+    .parceiro-card.gtz-card .gtz-image-link,
+    .parceiro-card.gtz-card .gtz-promo-img {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+    }
+
+    .parceiro-card.brincar-card .brincar-content {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .parceiro-card.brincar-card .brincar-logo-img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .parceiro-card.brincar-card h3,
+    .parceiro-card.brincar-card p {
+        overflow-wrap: anywhere;
+        word-break: break-word;
+    }
+
+    .parceiro-card.brincar-card .btn-brincar {
+        width: 100%;
+        max-width: 220px;
+        text-align: center;
+    }
+}
+
+/* Final mobile safeguard: force parceiros stack to a single full-width column */
+@media (max-width: 768px) {
+    .parceiros-grid {
+        grid-template-columns: 1fr !important;
+        gap: 16px;
+    }
+
+    .parceiro-card,
+    .parceiro-card.gtz-card,
+    .parceiro-card.brincar-card,
+    .parceiro-card.placeholder-card {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+}
+
+/* Final mobile safeguard: force Contacto cards to stack vertically */
+@media (max-width: 768px) {
+    .contacto-grid {
+        grid-template-columns: 1fr !important;
+        gap: 16px;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .contacto-card {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box;
+    }
+}
+
+/* Small Phones (480px and below) - extended coverage for 376px-479px */
+@media (max-width: 480px) {
+    /* Ensure achievements don't overflow */
+    .achievements-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    
+    .achievement-card {
+        padding: 14px 12px;
+    }
+    
+    .achievement-content strong {
+        font-size: 0.88rem;
+    }
+    
+    .achievement-content span {
+        font-size: 0.82rem;
+    }
+    
+    /* Ensure parceiros cards are contained */
+    .parceiros-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+    
+    .parceiro-card {
+        padding: 18px 16px;
+    }
+    .container {
+        padding: 0 12px;
+    }
+    
+    :root {
+        --section-padding: 50px;
+    }
+    
+    /* Hero further refinements */
+    .hero-card {
+        padding: 20px 14px;
+        border-radius: 12px;
+    }
+    
+    .profile-photo-frame {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .hero-name {
+        font-size: 1.4rem;
+        letter-spacing: 1px;
+    }
+    
+    .hero-subtitle {
+        font-size: 0.8rem;
+    }
+    
+    .hero-description {
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+    
+    .btn-twitch,
+    .btn-hero-outline {
+        padding: 10px 16px;
+        font-size: 0.85rem;
+    }
+    
+    /* Stats - better spacing */
+    .hero-stats {
+        gap: 6px;
+    }
+    
+    .stat-box {
+        padding: 12px 6px;
+    }
+    
+    .stat-number {
+        font-size: 1.1rem;
+    }
+    
+    .stat-label {
+        font-size: 0.65rem;
+    }
+    
+    /* Section headers */
+    .section-header h2 {
+        font-size: 1.25rem;
+    }
+    
+    /* Schedule adjustments */
+    .schedule-card {
+        padding: 16px 12px;
+    }
+    
+    .schedule-item {
+        padding: 10px 8px;
+    }
+    
+    .day-badge {
+        font-size: 0.6rem;
+        padding: 4px 6px;
+        min-width: 38px;
+    }
+    
+    .time {
+        font-size: 0.75rem;
+    }
+    
+    .stream-type {
+        font-size: 0.7rem;
+    }
+    
+    /* Contact cards */
+    .contacto-card {
+        padding: 20px 14px;
+    }
+    
+    .creator-code,
+    .gtz-shop-code {
+        font-size: 0.95rem;
+        letter-spacing: 0.5px;
+    }
+    
+    .creator-code-wrapper {
+        flex-wrap: wrap;
+        gap: 8px;
     }
 }
