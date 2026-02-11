@@ -1539,136 +1539,6 @@ ul {
     }
 }
 
-/* Small Phones (480px and below) - extended coverage for 376px-479px */
-@media (max-width: 480px) {
-    /* Ensure achievements don't overflow */
-    .achievements-grid {
-        grid-template-columns: 1fr;
-        gap: 10px;
-    }
-    
-    .achievement-card {
-        padding: 14px 12px;
-    }
-    
-    .achievement-content strong {
-        font-size: 0.88rem;
-    }
-    
-    .achievement-content span {
-        font-size: 0.82rem;
-    }
-    
-    /* Ensure parceiros cards are contained */
-    .parceiros-grid {
-        grid-template-columns: 1fr;
-        gap: 14px;
-    }
-    
-    .parceiro-card {
-        padding: 18px 16px;
-    }
-    .container {
-        padding: 0 12px;
-    }
-    
-    :root {
-        --section-padding: 50px;
-    }
-    
-    /* Hero further refinements */
-    .hero-card {
-        padding: 20px 14px;
-        border-radius: 12px;
-    }
-    
-    .profile-photo-frame {
-        width: 100px;
-        height: 100px;
-    }
-    
-    .hero-name {
-        font-size: 1.4rem;
-        letter-spacing: 1px;
-    }
-    
-    .hero-subtitle {
-        font-size: 0.8rem;
-    }
-    
-    .hero-description {
-        font-size: 0.85rem;
-        line-height: 1.5;
-    }
-    
-    .btn-twitch,
-    .btn-hero-outline {
-        padding: 10px 16px;
-        font-size: 0.85rem;
-    }
-    
-    /* Stats - better spacing */
-    .hero-stats {
-        gap: 6px;
-    }
-    
-    .stat-box {
-        padding: 12px 6px;
-    }
-    
-    .stat-number {
-        font-size: 1.1rem;
-    }
-    
-    .stat-label {
-        font-size: 0.65rem;
-    }
-    
-    /* Section headers */
-    .section-header h2 {
-        font-size: 1.25rem;
-    }
-    
-    /* Schedule adjustments */
-    .schedule-card {
-        padding: 16px 12px;
-    }
-    
-    .schedule-item {
-        padding: 10px 8px;
-    }
-    
-    .day-badge {
-        font-size: 0.6rem;
-        padding: 4px 6px;
-        min-width: 38px;
-    }
-    
-    .time {
-        font-size: 0.75rem;
-    }
-    
-    .stream-type {
-        font-size: 0.7rem;
-    }
-    
-    /* Contact cards */
-    .contacto-card {
-        padding: 20px 14px;
-    }
-    
-    .creator-code,
-    .gtz-shop-code {
-        font-size: 0.95rem;
-        letter-spacing: 0.5px;
-    }
-    
-    .creator-code-wrapper {
-        flex-wrap: wrap;
-        gap: 8px;
-    }
-}
-
 /* iPhone SE / Small Phones (375px and below) */
 @media (max-width: 375px) {
     .container {
@@ -2960,5 +2830,135 @@ ul {
         width: 100% !important;
         max-width: 100% !important;
         box-sizing: border-box;
+    }
+}
+
+/* Small Phones (480px and below) - extended coverage for 376px-479px */
+@media (max-width: 480px) {
+    /* Ensure achievements don't overflow */
+    .achievements-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    
+    .achievement-card {
+        padding: 14px 12px;
+    }
+    
+    .achievement-content strong {
+        font-size: 0.88rem;
+    }
+    
+    .achievement-content span {
+        font-size: 0.82rem;
+    }
+    
+    /* Ensure parceiros cards are contained */
+    .parceiros-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+    
+    .parceiro-card {
+        padding: 18px 16px;
+    }
+    .container {
+        padding: 0 12px;
+    }
+    
+    :root {
+        --section-padding: 50px;
+    }
+    
+    /* Hero further refinements */
+    .hero-card {
+        padding: 20px 14px;
+        border-radius: 12px;
+    }
+    
+    .profile-photo-frame {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .hero-name {
+        font-size: 1.4rem;
+        letter-spacing: 1px;
+    }
+    
+    .hero-subtitle {
+        font-size: 0.8rem;
+    }
+    
+    .hero-description {
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+    
+    .btn-twitch,
+    .btn-hero-outline {
+        padding: 10px 16px;
+        font-size: 0.85rem;
+    }
+    
+    /* Stats - better spacing */
+    .hero-stats {
+        gap: 6px;
+    }
+    
+    .stat-box {
+        padding: 12px 6px;
+    }
+    
+    .stat-number {
+        font-size: 1.1rem;
+    }
+    
+    .stat-label {
+        font-size: 0.65rem;
+    }
+    
+    /* Section headers */
+    .section-header h2 {
+        font-size: 1.25rem;
+    }
+    
+    /* Schedule adjustments */
+    .schedule-card {
+        padding: 16px 12px;
+    }
+    
+    .schedule-item {
+        padding: 10px 8px;
+    }
+    
+    .day-badge {
+        font-size: 0.6rem;
+        padding: 4px 6px;
+        min-width: 38px;
+    }
+    
+    .time {
+        font-size: 0.75rem;
+    }
+    
+    .stream-type {
+        font-size: 0.7rem;
+    }
+    
+    /* Contact cards */
+    .contacto-card {
+        padding: 20px 14px;
+    }
+    
+    .creator-code,
+    .gtz-shop-code {
+        font-size: 0.95rem;
+        letter-spacing: 0.5px;
+    }
+    
+    .creator-code-wrapper {
+        flex-wrap: wrap;
+        gap: 8px;
     }
 }
