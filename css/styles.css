@@ -2946,3 +2946,19 @@ ul {
         max-width: 100% !important;
     }
 }
+
+/* Final mobile safeguard: force Contacto cards to stack vertically */
+@media (max-width: 768px) {
+    .contacto-grid {
+        grid-template-columns: 1fr !important;
+        gap: 16px;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .contacto-card {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box;
+    }
+}
